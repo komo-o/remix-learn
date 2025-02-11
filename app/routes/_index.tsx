@@ -12,7 +12,12 @@ export default function Index() {
 
   return (
     <div>
-      <h1>連絡先一覧</h1>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h1>連絡先一覧</h1>
+        <Link to="/contact/new" className="button">
+          新規作成
+        </Link>
+      </div>
       <ul>
         {contacts.map((contact) => (
           <li key={contact.id}>

@@ -29,3 +29,10 @@ export function getContacts() {
 export function getContact(id: string) {
   return contacts.find((contact) => contact.id === id);
 }
+
+export function createContact(contact: Omit<Contact, "id">) {
+  const id = String(contacts.length + 1);
+  const newContact = { ...contact, id };
+  contacts.push(newContact);
+  return newContact;
+}
